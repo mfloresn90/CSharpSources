@@ -1,0 +1,45 @@
+﻿@model sBlog.Net.Areas.Admin.Models.AdminCommentViewModel
+
+@{
+    ViewBag.Title = string.Format("Manage Comments || {0}", Model.Title);
+}
+
+@Html.Partial("UserContentShortcuts")
+
+<br/>
+<hr />
+
+@Html.ActionLink("All", "ManagePublicComments", new { type = "all" })  (@Model.AllCommentsCount) |
+@Html.ActionLink("Approved", "ManagePublicComments", new { type = "approved" }) (@Model.ApprovedCommentsCount) | 
+@Html.ActionLink("Pending", "ManagePublicComments", new { type = "pending" }) (@Model.PendingCommentsCount) | 
+@Html.ActionLink("Spam", "ManagePublicComments", new { type = "spam" }) (@Model.SpamCommentsCount) | 
+@Html.ActionLink("Trash", "ManagePublicComments", new { type = "trash" }) (@Model.TrashCommentsCount)
+<br/><br/>
+
+@if (Model.Comments != null && Model.Comments.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Author</th>
+                <th>Comment</th>
+                <th>Post</th>
+            </tr>
+        </thead>
+        @foreach (var comment in Model.Comments)
+        {
+            @Html.Partial("Comment", comment)
+        }
+    </table>
+}
+else
+{    
+    <div class="alert alert-warning">
+        there are no items in this section at this point!
+    </div>
+}
+
+<ul class="pagination">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("ManagePublicComments", new { page = x, type = Model.Type }))
+</ul>
+@Html.HiddenFor(model => Model.OneTimeCode)

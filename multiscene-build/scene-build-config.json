@@ -1,0 +1,15 @@
+{
+  "Common": [
+      "Scenes/Map1",
+	  "Scenes/Map2"
+  ],
+  "Worker": [
+    "PhysicsServerScene"
+  ],
+  "Client": [
+    "Scenes/LoginScene",
+    "Scenes/CharacterSelect",
+    "Scenes/CharacterCreate",
+    "ClientScene"
+  ]
+}

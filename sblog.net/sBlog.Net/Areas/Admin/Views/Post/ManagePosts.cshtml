@@ -1,0 +1,47 @@
+﻿@model sBlog.Net.Areas.Admin.Models.AdminPostOrPageViewModel
+
+@{
+    ViewBag.Title = string.Format("Manage Posts || {0}", Model.Title);
+}
+
+@Html.ActionLink("All", "ManagePosts", new { type = "all" }) (@Model.AllPostsCount) |
+@Html.ActionLink("Published", "ManagePosts", new { type = "pub" }) (@Model.PublicPostsCount) | 
+@Html.ActionLink("Private", "ManagePosts", new { type = "pri" }) (@Model.PrivatePostsCount) | 
+
+<span class="addPost">
+    <img src="@Url.Content("~/Content/Images/post.png")" alt="Add a new post" class="add-post-page" />
+    @Html.ActionLink("Add a new post", "Add", "Post")
+</span>
+<br /><br/>
+@if (Model.Posts != null && Model.Posts.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Post</th>
+                <th class="hide-column">Author</th>
+                <th>Categories</th>
+                <th>Tags</th>
+                <th>Comments</th>
+                <th>Last Updated</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var post in Model.Posts)
+            {
+                @Html.Partial("PostDetail", post)
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">
+        there are no items in this section at this point!
+    </div>
+}
+
+<ul class="pagination">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("ManagePosts", new { page = x, type = Model.Type }))
+</ul>
+@Html.HiddenFor(model => Model.OneTimeCode)

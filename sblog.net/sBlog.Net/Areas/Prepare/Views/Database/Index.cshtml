@@ -1,0 +1,44 @@
+﻿@model sBlog.Net.Areas.Prepare.Models.DatabaseSetupModel
+
+@{
+    ViewBag.Title = "sBlog.Net Database Setup";
+}
+
+<div style="text-align: center">
+    <h2>sBlog.Net database setup</h2>
+</div>
+
+<br/>
+
+@Html.Partial("PrepareErrors", Model)
+
+<div>
+    You are at the first stage of the sBlog.Net setup! Welcome :) This step is pretty simple!
+    You just have to enter the connection string from your web.config in order to authenticate
+    yourself as the owner of this blog. Then clicking on the "Install Now &raquo;"
+    button would finish the database installation of sBlog.Net! The next step would
+    involve asking you for more information about your blog. So, here is the first step!
+</div>
+
+<br />
+
+@Html.Partial("ScriptListing", Model)
+
+<div style="text-align: center;">
+    @using (Html.BeginForm())
+    {
+        <br />
+        <span class="left-align">@Html.LabelFor(model => model.ConnectionString)</span> 
+        <span>[<span style="color: red; cursor: pointer" title="A case-sensitive validation is performed. So make sure you maintain case when you enter the connection string.">?</span>]</span><br />
+        @Html.TextBoxFor(model => model.ConnectionString, new { @class = "inputBoxBigConnStr", autocomplete = "off" })<br />
+        @Html.ValidationMessageFor(model => model.ConnectionString)
+        
+        <br />
+        
+        <button type="submit" class="important">Install Now &raquo;</button>        
+    }
+</div>
+
+<br/><br/>
+
+@Html.Partial("FatalErrors", Model)

@@ -1,0 +1,79 @@
+﻿@model sBlog.Net.Models.SyntaxHighlighterViewModel
+
+@{
+    ViewBag.Title = string.Format("Syntax Highlighter Options || {0}", Model.Title);
+}
+
+@Html.Partial("UpdateStatus", Model.UpdateStatus)
+
+@if (!Model.IsEnabled)
+{
+     if (Model.CanEnable)
+     {
+         <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Syntax Highlighter Options</h3>
+            </div>
+            <div class="panel-body">
+                 @using (Html.BeginForm("EnableSyntaxHighlighter", "Admin"))
+                 {
+                     @Html.CheckBox("enableSyntaxHighlighter", new {@id = "enableSyntaxHighlighter"})
+                     <label for="enableSyntaxHighlighter">Enable Syntax Highlighter</label>
+                     <input type="submit" value="Enable" class="btn btn-lg btn-primary" />
+                 }
+             </div>
+         </div>    
+     }
+     else
+     {
+         <div class="panel panel-default">
+             <div class="panel-heading">
+                 <h3 class="panel-title">Syntax Highlighter Options</h3>
+             </div>
+             <div class="panel-body">
+                 Please contact the <b>administrator</b> to enable syntax highlighter for this blog.
+             </div>
+         </div>    
+     }
+}
+
+@if (Model.IsEnabled)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Syntax Highlighter Options</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p class="pull-right">
+                            @Html.Action("SyntaxHighlighterHelp", "Admin")
+                        </p>
+                        @using (Html.BeginForm())
+                        {
+                            <span class="sub-title">Code highlighter theme:</span>
+                            <br />
+                            @Html.DropDownListFor(model => model.Theme, Model.AvailableThemes, Model.EditThemeAttributes)
+                            <b>(super admin only)</b>
+                            <br />
+                            <br />
+                            <span class="sub-title">Brushes:</span>
+                            <br />
+                            <div style="width: 200px;">
+                                @Html.Partial("CheckBoxList", Model.Brushes)
+                            </div>
+                            <br />
+                            <p class="pull-right">                    
+                                <input type="submit" value="Update Preferences" class="btn btn-lg btn-success" />
+                            </p>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                @Html.Partial("SyntaxHighlighterPreview")
+            </div>
+        </div>
+    </div>
+}

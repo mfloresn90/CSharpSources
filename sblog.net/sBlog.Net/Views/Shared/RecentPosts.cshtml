@@ -1,0 +1,17 @@
+﻿@model IEnumerable<sBlog.Net.Domain.Entities.PostEntity>
+
+<div id="section1" class="menu">
+	<h2>recent posts</h2>
+	<ul style="list-style-type:none;">
+	    @foreach(var post in Model)
+        {
+            <li>
+                @{
+                    var url = Url.RouteUrl("IndividualPost", new { year = post.PostYear, month = post.PostMonth, url = post.PostUrl, status = string.Empty });
+                    var shortTitle = post.PostTitle.Length > 25 ? string.Format("{0}...", post.PostTitle.Substring(0, 25)) : post.PostTitle;
+                }
+                <a href="@url" title="@post.PostTitle">@shortTitle</a>
+            </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,50 @@
+﻿@model sBlog.Net.Areas.Admin.Models.AdminAuthorsViewModel
+
+@{
+    ViewBag.Title = string.Format("User Management || {0}", Model.Title);
+}
+
+<style type="text/css">
+    #imgLoading {
+        display: none;
+        vertical-align: text-bottom
+    }
+</style>
+
+@Html.Partial("UserContentShortcuts")
+
+<br /><br/>
+@if (Model.Authors != null && Model.Authors.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Author Name</th>
+                <th>Author User Name</th>
+                <th>Number of Posts</th>
+                <th>
+                    User Status
+                    <img src="@Url.Content("~/Content/Images/loader-transparent.gif")" alt="updating..." id="imgLoading"/>
+                </th>
+                <th class="header" scope="col">Last Login</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var author in Model.Authors)
+            {
+                @Html.Partial("AuthorDetail", author)
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">
+        there are no items in this section at this point!
+    </div>    
+}
+
+<ul class="pagination">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("UserManagement", new { page = x }))
+</ul>
+@Html.HiddenFor(model => Model.OneTimeCode)

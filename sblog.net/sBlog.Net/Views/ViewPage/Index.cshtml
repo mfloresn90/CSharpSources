@@ -1,0 +1,38 @@
+﻿@using sBlog.Net.Models
+@using sBlog.Net.Models.Comments
+@model ViewPostOrPageModel
+
+@{
+    ViewBag.Title = string.Format("{0} || {1}", Model.Post.PostTitle, Model.BlogName);
+}
+
+@if (Model.UserCanEdit)
+{
+    <div style="float: right">
+        @Html.ActionLink("edit", "Edit", "Page", new { Area = "Admin", postID = Model.Post.PostID }, new { @class = "editLink" })
+    </div>
+    <br /><br />
+}
+
+@Html.Raw(Model.Post.PostContent)
+<br /><br />
+@Html.Partial("Toolbar", new ToolbarViewModel { BitlyUrl = Model.Post.BitlyUrl })
+@if (Model.BlogSharingEnabled && Model.Post.CanBeShared)
+{
+    @Html.Partial("SharingOptions", Model.SharingType)
+    <br /><br />
+}
+
+@if (!Model.DisqusEnabled)
+{
+    @Html.Partial("PostComments", Model.Post)
+    <br />
+    if (Model.Post.UserCanAddComments)
+    {
+        @Html.Partial("UserComment", new CommentViewModel {Post = Model.Post, Comment = Model.CommentEntity})
+    }
+}
+else
+{
+    @Html.Partial("DisqusComments", Model)
+}

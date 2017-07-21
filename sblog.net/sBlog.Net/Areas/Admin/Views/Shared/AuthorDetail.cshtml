@@ -1,0 +1,24 @@
+﻿@model sBlog.Net.Domain.Entities.UserEntity
+
+<tr>
+    <td>
+        <b>@Model.UserDisplayName</b><br /><br />
+        @Html.Partial("AuthorOptions", Model)
+    </td>
+    <td>
+        @Model.UserName
+    </td>
+    <td>
+        @Model.PostsCount
+    </td>
+    <td>
+        @Model.UserActiveStatusString
+        @if (User.IsInRole("SuperAdmin"))
+        {
+            @Html.Partial("UserRole", Model)
+        }
+    </td>
+    <td>
+        @Model.LastLoginDate
+    </td>    
+</tr>

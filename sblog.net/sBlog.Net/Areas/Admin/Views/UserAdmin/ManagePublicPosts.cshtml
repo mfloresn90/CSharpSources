@@ -1,0 +1,40 @@
+﻿@model sBlog.Net.Areas.Admin.Models.AdminPostOrPageViewModel
+
+@{
+    ViewBag.Title = string.Format("Manage Public Posts || {0}", Model.Title);
+}
+
+@Html.Partial("UserContentShortcuts")
+
+<br/><br/>
+@if (Model.Posts != null && Model.Posts.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Post</th>
+                <th>Author</th>
+                <th>Categories</th>
+                <th>Tags</th>
+                <th>Comments</th>
+                <th>Last Updated</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var post in Model.Posts)
+            {
+                @Html.Partial("PostDetail", post)
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">
+        there are no items in this section at this point!
+    </div>    
+}
+
+<ul class="pagination">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("ManagePublicPosts", new { page = x }))
+</ul>

@@ -1,0 +1,226 @@
+﻿@model sBlog.Net.Areas.Admin.Models.AdminSettingsViewModel
+
+@{
+    ViewBag.Title = string.Format("Update Settings || {0}", Model.Title);
+}
+
+<style type="text/css">
+    #disqusShortName {
+        display: none
+    }
+        
+    .seperator {
+        float: right;
+        color: black
+    }
+    
+    #disqus-akiemet {
+        display: none
+    }
+    
+    #error {
+        display: none
+    }
+    
+    #error span {
+        font-weight: bold
+    }
+    
+    #error ul {
+        padding: 20px;
+        list-style-type: square
+    }
+</style>
+
+<script type="text/javascript">
+    $(function () {
+        if ($('#DisqusEnabled').is(':checked')) {
+            $('#disqusShortName').show();
+            if ($('#DisqusShortName').val().trim() != '') {
+                $('#disqus-akiemet').show();
+                $('#disqusAkismet').attr('href', 'http://' + $('#DisqusShortName').val() + '.disqus.com/admin/settings/advanced/');
+            }
+        }
+
+        $('.setting-content').first().show();
+
+        $('#DisqusEnabled').change(function () {
+            if ($(this).is(':checked')) {
+                $('#disqusShortName').show();
+                if ($('#DisqusShortName').val().trim() != '') {
+                    $('#disqus-akiemet').show();
+                    $('#disqusAkismet').attr('href', 'http://' + $('#DisqusShortName').val() + '.disqus.com/admin/settings/advanced/');
+                }
+            } else {
+                $('#disqusShortName').hide();
+                $('#disqus-akiemet').hide();
+            }
+        });
+
+        $('.setting-header ').live('click', function () {
+            var content = $(this).next().next();
+            $(content).toggle('fast');
+        });
+
+        $("form").submit(function (e) {
+            if ($(this).valid() == false) {
+                if ($('.input-validation-error').length > 0) {
+                    $('#error').show();
+                    var tabId = $('.input-validation-error:eq(0)').parent().prop('id');
+                    $('#myTab a[href="#' + tabId + '"]').tab('show');
+                }
+            }
+        });
+    });
+</script>
+
+@Html.Partial("UpdateStatus", Model.UpdateStatus)
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(false, "Please correct the following errors", new { @class = "alert alert-danger", @id = "error" })
+
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#main" data-toggle="tab">Main</a></li>
+            <li><a href="#editor" data-toggle="tab">Blog Editor</a></li>
+            <li><a href="#email" data-toggle="tab">Email</a></li>
+            <li><a href="#social_sharing" data-toggle="tab">Sharing & Social</a></li>
+            <li><a href="#per_page" data-toggle="tab">Per Page</a></li>
+            <li><a href="#errors" data-toggle="tab">Site Errors</a></li>
+            <li><a href="#disqus" data-toggle="tab">Disqus</a></li>
+            <li><a href="#akismet" data-toggle="tab">Akismet</a></li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="main">
+                <br/>
+                
+                @Html.Partial("ThemeWarning", Model)
+
+                <span class="sub-title">@Html.LabelFor(model => model.BlogName)</span> <br />
+                @Html.TextBoxFor(model => model.BlogName, new {@class = "inputBoxBig"})
+
+                <br /><br />
+
+                <span class="sub-title">@Html.LabelFor(model => model.BlogCaption)</span> <br />
+                @Html.TextBoxFor(model => model.BlogCaption, new {@class = "inputBoxBig"})
+
+                <br /><br />
+
+                <span class="sub-title">@Html.LabelFor(model => model.BlogTheme)</span> <br />
+                @Html.DropDownListFor(model => model.BlogTheme, Model.BlogThemes, new {@class = "dropDownBox"})
+            </div>
+            <div class="tab-pane fade" id="editor">
+                <br/>
+
+                <span class="sub-title">@Html.LabelFor(model => model.EditorType)</span> <br />
+                @Html.DropDownListFor(model => model.EditorType, Model.EditorTypes, new {@class = "dropDownBox"})
+                &nbsp;<a id="markdownHelp" target="_blank" href="https://daringfireball.net/projects/markdown/basics">what is markdown?</a>
+            </div>
+            <div class="tab-pane fade" id="email">
+                <br/>
+
+                <span class="sub-title">@Html.LabelFor(model => model.AdminEmailAddress)</span> <br />
+                @Html.TextBoxFor(model => model.AdminEmailAddress, new {@class = "inputBoxBig"})<br/>
+                <span class="settings-info">(will be used as the from address in emails sent, and also as the user name for the smtp server if a password is specified)</span><br/>
+                <br/>
+
+                <span class="sub-title">@Html.LabelFor(model => model.BlogSmtpAddress)</span> <br />
+                @Html.TextBoxFor(model => model.BlogSmtpAddress, new {@class = "inputBoxBig"})<br />
+                <span class="settings-info">(without a valid smtp address, sending emails [site errors & forgotten password] would fail)</span>        
+                <br /><br />
+
+                <span class="sub-title">@Html.LabelFor(model => model.BlogSmtpPassword)</span> <br />
+                @Html.PasswordFor(model => model.BlogSmtpPassword, new {@class = "inputBoxBig"})<br />
+                <span class="settings-info">(some email servers might require a password, enter if any [not shown, if you have entered already])</span><br />
+                <span class="settings-info">(the smtp password won't be updated if you leave this field blank. so after you enter the password for the first time, you don't have to enter it every time)</span><br/>
+            </div>
+            <div class="tab-pane fade" id="social_sharing">
+                <br/>
+
+                <span class="sub-title">Social sharing options</span> <br />
+                @Html.CheckBoxFor(model => model.BlogSocialSharing)
+                @Html.LabelFor(model => model.BlogSocialSharing)
+
+                <br /><br/>
+
+                <span class="sub-title">Syntax highlighting</span> <br />
+                @Html.CheckBoxFor(model => model.BlogSyntaxHighlighting)
+                @Html.LabelFor(model => model.BlogSyntaxHighlighting)
+            </div>
+            <div class="tab-pane fade" id="per_page">
+                <br/>
+
+                <span class="sub-title">@Html.LabelFor(model => model.PostsPerPage)</span> <br />
+                @Html.TextBoxFor(model => model.PostsPerPage, new {@class = "inputBoxBig"})
+
+                <br /><br />
+        
+                <span class="sub-title">@Html.LabelFor(model => model.ManageItemsPerPage)</span> <br />
+                @Html.TextBoxFor(model => model.ManageItemsPerPage, new {@class = "inputBoxBig"})
+            </div>
+            <div class="tab-pane fade" id="errors">
+                <br/>
+
+                @Html.CheckBoxFor(model => model.BlogErrorAction)
+                @Html.LabelFor(model => model.BlogErrorAction)
+            </div>
+            <div class="tab-pane fade" id="disqus">
+                <br/>
+
+                <span class="sub-title">Enable Disqus?</span> <br /><br />
+                @Html.CheckBoxFor(model => model.DisqusEnabled)
+                @Html.LabelFor(model => model.DisqusEnabled)
+                <span id="disqus-akiemet">(<a href="#" target="_blank" id="disqusAkismet">akismet settings</a>)</span>
+                <br/>
+                <span class="settings-info">(enabling disqus will disable the default commenting system. to enable akismet go to the disqus admin page)</span>
+                <br /><br />
+
+                <div id="disqusShortName">
+                    <span class="sub-title">@Html.LabelFor(model => model.DisqusShortName)</span> <br />
+                    @Html.TextBoxFor(model => model.DisqusShortName, new {@class = "inputBoxBig"})
+                </div>
+            </div>
+            <div class="tab-pane fade" id="akismet">
+                <br/>
+
+                @Html.CheckBoxFor(model => model.AkismetEnabled)
+                @Html.LabelFor(model => model.AkismetEnabled)
+                <br/>
+                <span class="settings-info">(not required if you are planning to use disqus)</span>
+                <br/><br/>
+
+                <div class="panel panel-default akismetAdvancedOptions">                    
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Akismet Advanced Options</h3>
+                    </div>
+                    <div class="panel-body">
+                        <span class="sub-title">Akismet Spam Message Handling</span> <br />
+                        @Html.CheckBoxFor(model => model.AkismetDeleteSpam)
+                        @Html.LabelFor(model => model.AkismetDeleteSpam)
+
+                        <br /><br />
+
+                        <span class="sub-title" title="you will have to register in the akismet's site (http://akismet.com/) by specifying your blog's url to obtain this key">
+                            @Html.LabelFor(model => model.AkismetKey)
+                        </span> 
+                        <br />
+                        @Html.TextBoxFor(model => model.AkismetKey, new {@class = "inputBoxBig"})
+
+                        <br /><br />
+
+                        <span class="sub-title" title="by default, this field is populated with the root site address identified by the url in the address bar">
+                            @Html.LabelFor(model => model.AkismetUrl)
+                        </span> 
+                        <br />
+                        @Html.TextBoxFor(model => model.AkismetUrl, new {@class = "inputBoxBig"})
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <p class="pull-right">
+            <input type="submit" value="Update Settings" class="btn btn-lg btn-primary" />
+        </p>
+    }
+</div>
