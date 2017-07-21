@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="update" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wrong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\wrong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="infoWindow" xml:space="preserve">
+    <value>Información del Sistema</value>
+  </data>
+  <data name="tablaArea" xml:space="preserve">
+    <value>area</value>
+  </data>
+  <data name="tablaAreaPersona" xml:space="preserve">
+    <value>area_persona</value>
+  </data>
+  <data name="tablaCodigoPostal" xml:space="preserve">
+    <value>codigo_postal</value>
+  </data>
+  <data name="tablaEquipo" xml:space="preserve">
+    <value>equipo</value>
+  </data>
+  <data name="tablaEvidencias" xml:space="preserve">
+    <value>evidencias</value>
+  </data>
+  <data name="tablaObra" xml:space="preserve">
+    <value>obra</value>
+  </data>
+  <data name="tablaPersona" xml:space="preserve">
+    <value>persona</value>
+  </data>
+  <data name="tablaResponsiva" xml:space="preserve">
+    <value>responsiva</value>
+  </data>
+  <data name="tablaTipoPersona" xml:space="preserve">
+    <value>tipo_persona</value>
+  </data>
+  <data name="tablaTipoProducto" xml:space="preserve">
+    <value>tipo_producto</value>
+  </data>
+  <data name="tablaUsuario" xml:space="preserve">
+    <value>usuario</value>
+  </data>
+  <data name="tablaVertiente" xml:space="preserve">
+    <value>vertiente</value>
+  </data>
+  <data name="tablaVertientePersona" xml:space="preserve">
+    <value>vertiente_persona</value>
+  </data>
+  <data name="VistaAreaPersona" xml:space="preserve">
+    <value>tbl_area_persona</value>
+  </data>
+  <data name="VistaEquipo" xml:space="preserve">
+    <value>tbl_equipo</value>
+  </data>
+  <data name="VistaEvidencias" xml:space="preserve">
+    <value>tbl_evidencias</value>
+  </data>
+  <data name="VistaLogin" xml:space="preserve">
+    <value>tbl_login</value>
+  </data>
+  <data name="VistaObra" xml:space="preserve">
+    <value>tbl_obra</value>
+  </data>
+  <data name="VistaPersona" xml:space="preserve">
+    <value>tbl_persona</value>
+  </data>
+  <data name="VistaResponsiva" xml:space="preserve">
+    <value>tbl_responsiva</value>
+  </data>
+  <data name="ConexionBD" xml:space="preserve">
+    <value>Database=db_dczoem;Data Source=localhost;User Id=root;Password=</value>
+  </data>
+  <data name="AreaBusqueda" xml:space="preserve">
+    <value>id_area AS IDENTIFICADOR, nombre_area AS ÁREA, encargado AS ENCARGADO</value>
+  </data>
+  <data name="AreaInsertar" xml:space="preserve">
+    <value>nombre_area, encargado</value>
+  </data>
+  <data name="AreaPersonaBusqueda" xml:space="preserve">
+    <value>id_area AS 'ID AREA', nombre_area AS AREA, id_persona AS 'ID PERSONA', nombre AS NOMBRE, ap_pat AS 'APELLIDO PATERNO', ap_mat AS 'APELLIDO MATERNO'</value>
+  </data>
+  <data name="AreaPersonaInsertar" xml:space="preserve">
+    <value>id_area, id_persona</value>
+  </data>
+  <data name="MsgValidateRegisterSelect" xml:space="preserve">
+    <value>Selecciona un registro válido.</value>
+  </data>
+  <data name="CPBusqueda" xml:space="preserve">
+    <value>id_codigo AS IDENTIFICADOR, cp AS 'CODIGO POSTAL', asentamiento AS ASENTAMIENTO, tipo AS TIPO, municipio AS MUNICIPIO, ciudad AS CIUDAD, estado AS ESTADO</value>
+  </data>
+  <data name="CPInsertar" xml:space="preserve">
+    <value>cp, asentamiento, tipo, municipio, ciudad, estado</value>
+  </data>
+  <data name="EquipoBusqueda" xml:space="preserve">
+    <value>id_equipo AS IDENTIFICADOR, marca AS MARCA, serie AS SERIE, descripcion AS DESCRIPCION, id_tipo_producto AS 'ID TIPO PRODUCTO', tipo_producto AS 'TIPO DE PRODUCTO'</value>
+  </data>
+  <data name="EquipoInsertar" xml:space="preserve">
+    <value>id_equipo, marca, serie, descripcion, id_tipo_producto</value>
+  </data>
+  <data name="EvidenciasBusqueda" xml:space="preserve">
+    <value>id_evidencias AS IDENTIFICADOR, num_fotos AS '# DE FOTOS', num_videos AS '# DE VIDEOS', num_cphs AS '# DE CPHS', actualizo AS ACTUALIZO, fecha AS FECHA, id_obra AS 'ID OBRA', nombre_obra AS OBRA</value>
+  </data>
+  <data name="EvidenciasInsertar" xml:space="preserve">
+    <value>num_fotos, num_videos, num_cphs, actualizo, id_obra</value>
+  </data>
+  <data name="MsgActualizacionFail" xml:space="preserve">
+    <value>Falló al actualizar!.</value>
+  </data>
+  <data name="MsgActualizacionOk" xml:space="preserve">
+    <value>Actualización éxitosa!.</value>
+  </data>
+  <data name="MsgBuscarFail" xml:space="preserve">
+    <value>Falló al buscar los datos!.</value>
+  </data>
+  <data name="MsgEliminacionFail" xml:space="preserve">
+    <value>Falló al eliminar!.</value>
+  </data>
+  <data name="MsgEliminacionOk" xml:space="preserve">
+    <value>Eliminación éxitosa!.</value>
+  </data>
+  <data name="MsgRegistroFail" xml:space="preserve">
+    <value>Falló al registrar!.</value>
+  </data>
+  <data name="MsgRegistroOk" xml:space="preserve">
+    <value>Registro éxitoso!.</value>
+  </data>
+  <data name="MsgRelEliFail" xml:space="preserve">
+    <value>No se puede eliminar el registro ya que existe una dependencia con otra tabla.</value>
+  </data>
+  <data name="ObraBusqueda" xml:space="preserve">
+    <value>id_obra AS IDENTIFICADOR, nombre_obra AS OBRA, no_beneficiarios AS BENEFICIARIOS, id_persona 'ID PERSONA', nombre AS NOMBRE, ap_pat AS 'APELLIDO PATERNO', ap_mat AS 'APELLIDO MATERNO'</value>
+  </data>
+  <data name="ObraInsertar" xml:space="preserve">
+    <value>nombre_obra, no_beneficiarios, id_persona</value>
+  </data>
+  <data name="ResponsivaBusqueda" xml:space="preserve">
+    <value>id_responsiva AS IDENTIFICADOR, condiciones_equipo AS CONDICIONES, justificacion_salida AS JUSTIFICACION, fecha_salida AS SALIDA, fecha_a_retorno AS 'FECHA A RETORNO', fecha_retorno AS 'FECHA DE RETORNO', observ_retorno AS 'OBSERVACION RETORNO', id_equipo AS 'ID EQUIPO', marca AS MARCA, id_persona 'ID PERSONA', nombre AS NOMBRE, ap_pat AS 'APELLIDO PATERNO', ap_mat AS 'APELLIDO MATERNO'</value>
+  </data>
+  <data name="ResponsivaInsertar" xml:space="preserve">
+    <value>condiciones_equipo, justificacion_salida, fecha_a_retorno, fecha_retorno, observ_retorno, id_equipo, id_persona</value>
+  </data>
+  <data name="TipoPersonaBusqueda" xml:space="preserve">
+    <value>id_tipo_persona AS IDENTIFICADOR, tipo_persona as TIPO</value>
+  </data>
+  <data name="TipoPersonaInsertar" xml:space="preserve">
+    <value>tipo_persona</value>
+  </data>
+  <data name="TipoProductoBusqueda" xml:space="preserve">
+    <value>id_tipo_producto AS IDENTIFICADOR, tipo_producto as TIPO</value>
+  </data>
+  <data name="TipoProductoInsertar" xml:space="preserve">
+    <value>tipo_producto</value>
+  </data>
+  <data name="UsuarioBusqueda" xml:space="preserve">
+    <value>id_usuario AS IDENTIFICADOR, usuario AS USUARIO, contrasena AS CONTRASEÑA, id_persona AS 'ID PERSONA', nombre AS NOMBRE, ap_pat AS 'APELLIDO PATERNO', ap_mat AS 'APELLIDO MATERNO', tipo_persona AS 'TIPO'</value>
+  </data>
+  <data name="UsuarioInsertar" xml:space="preserve">
+    <value>usuario, contrasena, id_persona</value>
+  </data>
+  <data name="VertienteBusqueda" xml:space="preserve">
+    <value>id_vertiente AS IDENTIFICADOR, nombre_vertiente AS VERTIENTE</value>
+  </data>
+  <data name="VertienteInsertar" xml:space="preserve">
+    <value>nombre_vertiente</value>
+  </data>
+  <data name="VertientePersonaBusqueda" xml:space="preserve">
+    <value>id_vertiente AS IDENTIFICADOR, nombre_vertiente AS VERTIENTE, id_persona AS 'ID PERSONA', nombre AS NOMBRE, ap_pat AS 'APELLIDO PATERNO', ap_mat AS 'APELLIDO MATERNO'</value>
+  </data>
+  <data name="VertientePersonaInsertar" xml:space="preserve">
+    <value>id_vertiente, id_persona</value>
+  </data>
+  <data name="VistaVertientePersona" xml:space="preserve">
+    <value>tbl_vertiente_persona</value>
+  </data>
+  <data name="PersonaBusqueda" xml:space="preserve">
+    <value>id_persona AS IDENTIFICADOR, nombre AS NOMBRE, ap_pat AS 'APELLIDO PATERNO', ap_mat AS 'APELLIDO MATERNO', sexo AS SEXO, contacto AS CONTACTO, telefono1 AS TELEFONO1, telefono2 AS TELEFONO2, foto as FOTO, activo AS ACTIVO, cp AS 'CODIGO POSTAL', calle AS CALLE, colonia AS COLONIA, municipio AS MUNICIPIO, estado AS ESTADO, id_tipo_persona AS 'ID TIPO', tipo_persona AS TIPO</value>
+  </data>
+  <data name="PersonaInsertar" xml:space="preserve">
+    <value>id_persona, nombre, ap_pat, ap_mat, sexo, contacto, telefono1, telefono2, foto, activo, cp, calle, colonia, municipio, estado, id_tipo_persona</value>
+  </data>
+  <data name="defaultUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\defaultUser.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

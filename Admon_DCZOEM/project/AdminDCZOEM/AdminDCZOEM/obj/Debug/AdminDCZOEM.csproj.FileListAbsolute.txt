@@ -1,0 +1,3 @@
+C:\Users\dark_\Desktop\Administración DCZOEM\project\AdminDCZOEM\AdminDCZOEM\bin\Debug\AdminDCZOEM.exe.config
+C:\Users\dark_\Desktop\Administración DCZOEM\project\AdminDCZOEM\AdminDCZOEM\obj\Debug\AdminDCZOEM.exe
+C:\Users\dark_\Desktop\Administración DCZOEM\project\AdminDCZOEM\AdminDCZOEM\obj\Debug\AdminDCZOEM.pdb
