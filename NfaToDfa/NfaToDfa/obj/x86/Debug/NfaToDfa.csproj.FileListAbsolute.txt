@@ -1,0 +1,8 @@
+/Users/mfloresn90/Projects/VisualStudio/NfaToDfa/NfaToDfa/obj/x86/Debug/NfaToDfa.csproj.CoreCompileInputs.cache
+/Users/mfloresn90/Projects/VisualStudio/NfaToDfa/NfaToDfa/bin/Debug/NfaToDfa.exe
+/Users/mfloresn90/Projects/VisualStudio/NfaToDfa/NfaToDfa/bin/Debug/NfaToDfa.pdb
+/Users/mfloresn90/Projects/VisualStudio/NfaToDfa/NfaToDfa/obj/x86/Debug/NfaToDfa.exe
+/Users/mfloresn90/Projects/VisualStudio/NfaToDfa/NfaToDfa/obj/x86/Debug/NfaToDfa.pdb
+/Volumes/Toshiba HDD/Documentos/Maestría/1º Semestre/Teoría de la Computación y Complejidad Algorítmica/NfaToDfa/NfaToDfa/obj/x86/Debug/NfaToDfa.csproj.CoreCompileInputs.cache
+/Volumes/Toshiba HDD/Documentos/Maestría/1º Semestre/Teoría de la Computación y Complejidad Algorítmica/NfaToDfa/NfaToDfa/obj/x86/Debug/NfaToDfa.exe
+/Volumes/Toshiba HDD/Documentos/Maestría/1º Semestre/Teoría de la Computación y Complejidad Algorítmica/NfaToDfa/NfaToDfa/obj/x86/Debug/NfaToDfa.pdb
